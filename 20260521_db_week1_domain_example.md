@@ -32,8 +32,8 @@ The system should support:
 
 | customer_id | customer_name | email | phone |
 |---|---|---|---|
-| 1 | Ahmed Ali | ahmed@email.com | 07123456789 |
-| 2 | Sarah Khan | sarah@email.com | 07987654321 |
+| 1 | John Smith | john@email.com | 07123456789 |
+| 2 | Emily Johnson | emily@email.com | 07987654321 |
 
 ---
 
