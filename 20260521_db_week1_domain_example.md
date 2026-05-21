@@ -30,6 +30,8 @@ The system should support:
 
 ## Customers
 
+Stores customer account and contact information.
+
 | customer_id | customer_name | email | phone |
 |---|---|---|---|
 | 1 | John Smith | john@email.com | 07123456789 |
@@ -38,6 +40,8 @@ The system should support:
 ---
 
 ## Products
+
+Stores product details including price and stock quantity.
 
 | product_id | product_name | price | stock_quantity | category_id |
 |---|---|---|---|---|
@@ -48,6 +52,8 @@ The system should support:
 
 ## Categories
 
+Stores product category information.
+
 | category_id | category_name |
 |---|---|
 | 1 | Computer Accessories |
@@ -56,6 +62,8 @@ The system should support:
 ---
 
 ## Orders
+
+Stores customer order records and order totals.
 
 | order_id | order_date | customer_id | total_amount |
 |---|---|---|---|
@@ -66,6 +74,8 @@ The system should support:
 
 ## OrderItems
 
+Stores the products included in each order and their quantities.
+
 | order_item_id | order_id | product_id | quantity |
 |---|---|---|---|
 | 1 | 1 | 1 | 2 |
@@ -75,6 +85,8 @@ The system should support:
 
 ## Payments
 
+Stores payment information related to customer orders.
+
 | payment_id | payment_method | payment_date | order_id |
 |---|---|---|---|
 | 1 | Credit Card | 2026-06-10 | 1 |
@@ -83,6 +95,8 @@ The system should support:
 ---
 
 ## Deliveries
+
+Stores delivery details and shipment status for orders.
 
 | delivery_id | delivery_address | delivery_status | order_id |
 |---|---|---|---|
