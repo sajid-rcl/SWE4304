@@ -1,128 +1,128 @@
-# Professional Conference Management System
+# Online Store Management System
 
 ## Scenario
 
-A professional training company manages conferences, seminars, and workshops across multiple venues in the UK. The organisation needs a database system to manage events, speakers, venues, sponsors, and attendee registrations.
+An online retail company needs a database system to manage customers, products, orders, deliveries, and payments. The system should help staff track customer purchases, monitor stock, and manage order processing efficiently.
 
 The system should support:
-- Managing organisations and conference providers
-- Organising conferences and seminars
-- Assigning speakers to sessions
-- Managing venues and halls
-- Tracking attendee registrations
-- Recording sponsor information
+- Managing customer accounts
+- Managing products and categories
+- Recording customer orders
+- Tracking payments
+- Managing deliveries
+- Monitoring stock availability
 
 ---
 
 # Candidate Entities
 
-- Organisation
-- Conference
-- Sponsor
-- EventSession
-- Venue
-- Speaker
-- Registration
+- Customer
+- Order
+- Product
+- Payment
+- Delivery
+- Category
+- OrderItem
 
 ---
 
 # Example Tables and Sample Data
 
-## Organisations
+## Customers
 
-| organisation_id | organisation_name      | manager_name   | contact_email                  |
+| customer_id | customer_name | email | phone |
 |---|---|---|---|
-| 001 | TechSkills Academy | Sarah Ahmed | info@techskills.com |
-| 002 | FutureLearn Hub | Daniel Smith | contact@futurelearnhub.com |
+| C001 | Ahmed Ali | ahmed@email.com | 07123456789 |
+| C002 | Sarah Khan | sarah@email.com | 07987654321 |
 
 ---
 
-## Conferences
+## Products
 
-| conference_id | title | category | organisation_id |
+| product_id | product_name | price | stock_quantity |
 |---|---|---|---|
-| 101 | Cloud Computing Bootcamp | Technology | ORG001 |
-| 102 | Agile Project Management | Business | ORG002 |
+| P001 | Wireless Mouse | 25.99 | 40 |
+| P002 | Mechanical Keyboard | 79.99 | 15 |
 
 ---
 
-## Sponsors
+## Categories
 
-| sponsor_id | sponsor_name | address | contact_number |
-|---|---|---|---|
-| 001 | Innovate UK | London | 0201234567 |
-| 002 | DataCore Ltd | Manchester | 0161987654 |
-
----
-
-## EventSessions
-
-| session_id | session_date | session_time | hall | speaker_id |
-|---|---|---|---|---|
-| 001 | 2026-07-10 | 10:00 | Hall A | SPE001 |
-| 002 | 2026-07-11 | 14:00 | Hall B | SPE002 |
+| category_id | category_name |
+|---|---|
+| CAT001 | Computer Accessories |
+| CAT002 | Office Equipment |
 
 ---
 
-## Venues
+## Orders
 
-| venue_id | venue_name | address | seating_capacity |
+| order_id | order_date | customer_id | total_amount |
 |---|---|---|---|
-| 001 | Manchester Conference Centre | Manchester | 300 |
-| 002 | London Tech Hall | London | 500 |
+| O001 | 2026-06-10 | C001 | 105.98 |
+| O002 | 2026-06-12 | C002 | 79.99 |
 
 ---
 
-## Speakers
+## OrderItems
 
-| speaker_id | speaker_name | expertise | affiliated_organisation |
+| order_item_id | order_id | product_id | quantity |
 |---|---|---|---|
-| 001 | John Carter | Cloud Computing | TechSkills Academy |
-| 002 | Emily Brown | Agile Methodologies | FutureLearn Hub |
+| OI001 | O001 | P001 | 2 |
+| OI002 | O002 | P002 | 1 |
 
 ---
 
-## Registrations
+## Payments
 
-| registration_id | attendee_name | attendee_email | session_id |
+| payment_id | payment_method | payment_date | order_id |
 |---|---|---|---|
-| 001 | Ali Hassan | ali@email.com | SES001 |
-| 002 | Maria Khan | maria@email.com | SES002 |
+| PAY001 | Credit Card | 2026-06-10 | O001 |
+| PAY002 | PayPal | 2026-06-12 | O002 |
+
+---
+
+## Deliveries
+
+| delivery_id | delivery_address | delivery_status | order_id |
+|---|---|---|---|
+| D001 | Manchester, UK | Shipped | O001 |
+| D002 | London, UK | Processing | O002 |
 
 ---
 
 # Example Relationships
 
-- Organisation manages Conference
-- Conference contains EventSession
-- Speaker delivers EventSession
-- Venue hosts EventSession
-- Attendee registers for EventSession
-- Sponsor supports Conference
+- Customer places Order
+- Order contains OrderItem
+- Product appears in OrderItem
+- Order has Payment
+- Order has Delivery
+- Product belongs to Category
 
 ---
 
 # Example Assumptions
 
-1. Each conference belongs to one organisation.
-2. Each session is delivered by one speaker.
-3. A venue can host multiple sessions.
-4. A participant can register for multiple sessions.
-5. Each sponsor can support multiple conferences.
+1. Each customer can place multiple orders.
+2. Each order belongs to one customer.
+3. An order can contain multiple products.
+4. Each payment is linked to one order.
+5. Each delivery record belongs to one order.
 
 ---
 
 # Example Scope Statement
 
 ## In Scope
-- Conference management
-- Speaker management
-- Session scheduling
-- Registration tracking
-- Venue management
+- Customer management
+- Product management
+- Order processing
+- Payment tracking
+- Delivery tracking
 
 ## Out of Scope
-- Online payments
-- Accommodation booking
-- Transport management
-- Video streaming services
+- Supplier management
+- Warehouse automation
+- Refund processing
+- International shipping
