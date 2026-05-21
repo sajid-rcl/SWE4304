@@ -32,17 +32,17 @@ The system should support:
 
 | customer_id | customer_name | email | phone |
 |---|---|---|---|
-| C001 | Ahmed Ali | ahmed@email.com | 07123456789 |
-| C002 | Sarah Khan | sarah@email.com | 07987654321 |
+| 1 | Ahmed Ali | ahmed@email.com | 07123456789 |
+| 2 | Sarah Khan | sarah@email.com | 07987654321 |
 
 ---
 
 ## Products
 
-| product_id | product_name | price | stock_quantity |
-|---|---|---|---|
-| P001 | Wireless Mouse | 25.99 | 40 |
-| P002 | Mechanical Keyboard | 79.99 | 15 |
+| product_id | product_name | price | stock_quantity | category_id |
+|---|---|---|---|---|
+| 1 | Wireless Mouse | 25.99 | 40 | 1 |
+| 2 | Mechanical Keyboard | 79.99 | 15 | 1 |
 
 ---
 
@@ -50,8 +50,8 @@ The system should support:
 
 | category_id | category_name |
 |---|---|
-| CAT001 | Computer Accessories |
-| CAT002 | Office Equipment |
+| 1 | Computer Accessories |
+| 2 | Office Equipment |
 
 ---
 
@@ -59,8 +59,8 @@ The system should support:
 
 | order_id | order_date | customer_id | total_amount |
 |---|---|---|---|
-| O001 | 2026-06-10 | C001 | 105.98 |
-| O002 | 2026-06-12 | C002 | 79.99 |
+| 1 | 2026-06-10 | 1 | 105.98 |
+| 2 | 2026-06-12 | 2 | 79.99 |
 
 ---
 
@@ -68,8 +68,8 @@ The system should support:
 
 | order_item_id | order_id | product_id | quantity |
 |---|---|---|---|
-| OI001 | O001 | P001 | 2 |
-| OI002 | O002 | P002 | 1 |
+| 1 | 1 | 1 | 2 |
+| 2 | 2 | 2 | 1 |
 
 ---
 
@@ -77,8 +77,8 @@ The system should support:
 
 | payment_id | payment_method | payment_date | order_id |
 |---|---|---|---|
-| PAY001 | Credit Card | 2026-06-10 | O001 |
-| PAY002 | PayPal | 2026-06-12 | O002 |
+| 1 | Credit Card | 2026-06-10 | 1 |
+| 2 | PayPal | 2026-06-12 | 2 |
 
 ---
 
@@ -86,8 +86,8 @@ The system should support:
 
 | delivery_id | delivery_address | delivery_status | order_id |
 |---|---|---|---|
-| D001 | Manchester, UK | Shipped | O001 |
-| D002 | London, UK | Processing | O002 |
+| 1 | Manchester, UK | Shipped | 1 |
+| 2 | London, UK | Processing | 2 |
 
 ---
 
