@@ -32,17 +32,17 @@ The system should support:
 
 | organisation_id | organisation_name      | manager_name   | contact_email                  |
 |---|---|---|---|
-| ORG001 | TechSkills Academy | Sarah Ahmed | info@techskills.com |
-| ORG002 | FutureLearn Hub | Daniel Smith | contact@futurelearnhub.com |
+| 001 | TechSkills Academy | Sarah Ahmed | info@techskills.com |
+| 002 | FutureLearn Hub | Daniel Smith | contact@futurelearnhub.com |
 
 ---
 
 ## Conferences
 
-| conference_code | title | category | organisation_id |
+| conference_id | title | category | organisation_id |
 |---|---|---|---|
-| CONF101 | Cloud Computing Bootcamp | Technology | ORG001 |
-| CONF102 | Agile Project Management | Business | ORG002 |
+| 101 | Cloud Computing Bootcamp | Technology | ORG001 |
+| 102 | Agile Project Management | Business | ORG002 |
 
 ---
 
@@ -50,8 +50,8 @@ The system should support:
 
 | sponsor_id | sponsor_name | address | contact_number |
 |---|---|---|---|
-| SP001 | Innovate UK | London | 0201234567 |
-| SP002 | DataCore Ltd | Manchester | 0161987654 |
+| 001 | Innovate UK | London | 0201234567 |
+| 002 | DataCore Ltd | Manchester | 0161987654 |
 
 ---
 
@@ -59,8 +59,8 @@ The system should support:
 
 | session_id | session_date | session_time | hall | speaker_id |
 |---|---|---|---|---|
-| SES001 | 2026-07-10 | 10:00 | Hall A | SPE001 |
-| SES002 | 2026-07-11 | 14:00 | Hall B | SPE002 |
+| 001 | 2026-07-10 | 10:00 | Hall A | SPE001 |
+| 002 | 2026-07-11 | 14:00 | Hall B | SPE002 |
 
 ---
 
@@ -68,8 +68,8 @@ The system should support:
 
 | venue_id | venue_name | address | seating_capacity |
 |---|---|---|---|
-| VEN001 | Manchester Conference Centre | Manchester | 300 |
-| VEN002 | London Tech Hall | London | 500 |
+| 001 | Manchester Conference Centre | Manchester | 300 |
+| 002 | London Tech Hall | London | 500 |
 
 ---
 
@@ -77,8 +77,8 @@ The system should support:
 
 | speaker_id | speaker_name | expertise | affiliated_organisation |
 |---|---|---|---|
-| SPE001 | John Carter | Cloud Computing | TechSkills Academy |
-| SPE002 | Emily Brown | Agile Methodologies | FutureLearn Hub |
+| 001 | John Carter | Cloud Computing | TechSkills Academy |
+| 002 | Emily Brown | Agile Methodologies | FutureLearn Hub |
 
 ---
 
@@ -86,8 +86,8 @@ The system should support:
 
 | registration_id | attendee_name | attendee_email | session_id |
 |---|---|---|---|
-| REG001 | Ali Hassan | ali@email.com | SES001 |
-| REG002 | Maria Khan | maria@email.com | SES002 |
+| 001 | Ali Hassan | ali@email.com | SES001 |
+| 002 | Maria Khan | maria@email.com | SES002 |
 
 ---
 
