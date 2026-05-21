@@ -26,7 +26,7 @@ The system should support:
 
 ---
 
-# Example Tables and Sample Data
+# Tables and Sample Data
 
 ## Customers
 
@@ -105,7 +105,7 @@ Stores delivery details and shipment status for orders.
 
 ---
 
-# Example Relationships
+# Relationships
 
 - Customer places Order
 - Order contains OrderItem
@@ -116,7 +116,7 @@ Stores delivery details and shipment status for orders.
 
 ---
 
-# Example Assumptions
+# Assumptions
 
 1. Each customer can place multiple orders.
 2. Each order belongs to one customer.
@@ -126,7 +126,7 @@ Stores delivery details and shipment status for orders.
 
 ---
 
-# Example Scope Statement
+# Scope Statement
 
 ## In Scope
 - Customer management
