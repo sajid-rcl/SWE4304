@@ -1,7 +1,5 @@
 # SWE4304 Databases – Assignment 1 Brief
 
-Based on the business scenario in the assessment brief.
-
 ## Scope Statement
 
 ### In Scope
