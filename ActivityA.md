@@ -36,11 +36,3 @@ The following candidate entities were identified from the business scenario:
 
 ---
 
-## Notes for Peer Feedback
-
-For peer feedback, I would like comments on:
-
-- Whether the identified entities are appropriate and complete.
-- Whether the scope is realistic and clearly defined.
-- If any assumptions should be added, removed, or clarified.
-- Whether Programme and Workshop should remain separate entities or be combined into one entity with a type attribute.
