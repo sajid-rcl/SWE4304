@@ -1,91 +1,131 @@
-# 1 : 1 Relationships
+# Relationships and Cardinalities
 
-There are no true **1 : 1** relationships in this model.
+## 1:N Relationships
 
----
+### Division → ProgrammeWorkshop
+A division can manage many programmes/workshops, but each programme/workshop belongs to one division.
 
-# 1 : M Relationships
+```text
+Division 1 —— N ProgrammeWorkshop
+```
 
-## Division → ProgrammeWorkshop
-Division 1..1 —— 1..* ProgrammeWorkshop
+### AccreditingBody → ProgrammeWorkshop
+An accrediting body can accredit many programmes/workshops, but each programme/workshop has one accrediting body.
 
-- One Division can have many ProgrammeWorkshops.
-- Each ProgrammeWorkshop belongs to exactly one Division.
+```text
+AccreditingBody 1 —— N ProgrammeWorkshop
+```
 
----
+### Campus → Session
+A campus can host many sessions, but each session takes place at one campus.
 
-## AccreditingBody → ProgrammeWorkshop
-AccreditingBody 1..1 —— 0..* ProgrammeWorkshop
+```text
+Campus 1 —— N Session
+```
 
-- One AccreditingBody can accredit many ProgrammeWorkshops.
-- Each ProgrammeWorkshop belongs to one AccreditingBody.
+### ProgrammeWorkshop → Session
+One programme/workshop can have many sessions, but each session belongs to one programme/workshop.
 
----
+```text
+ProgrammeWorkshop 1 —— N Session
+```
 
-## Campus → Session
-Campus 1..1 —— 0..* Session
+### Instructor → Session
+One instructor can teach many sessions, but each session has one instructor.
 
-- One Campus can host many Sessions.
-- Each Session belongs to one Campus.
+```text
+Instructor 1 —— N Session
+```
 
----
+### Session → Enrolment
+One session can have many enrolments, but each enrolment belongs to one session.
 
-## ProgrammeWorkshop → Session
-ProgrammeWorkshop 1..1 —— 1..* Session
+```text
+Session 1 —— N Enrolment
+```
 
-- One ProgrammeWorkshop can contain many Sessions.
-- Each Session belongs to one ProgrammeWorkshop.
+### Campus → Instructor
+One campus can have many instructors, but each instructor has one home campus.
 
----
-
-## Instructor → Session
-Instructor 1..1 —— 0..* Session
-
-- One Instructor can teach many Sessions.
-- Each Session is taught by one Instructor.
-
----
-
-## Campus → Instructor
-Campus 1..1 —— 0..* Instructor
-
-- One Campus can have many Instructors.
-- Each Instructor belongs to one Campus.
-
----
-
-## Session → Enrolment
-Session 1..1 —— 0..* Enrolment
-
-- One Session can have many Enrolments.
-- Each Enrolment belongs to one Session.
+```text
+Campus 1 —— N Instructor
+```
 
 ---
 
-## Participant → Enrolment
-Participant 1..1 —— 0..* Enrolment
+# N:1 Relationships
 
-- One Participant can have many Enrolments.
-- Each Enrolment belongs to one Participant.
+## ProgrammeWorkshop → Division
+
+```text
+ProgrammeWorkshop N —— 1 Division
+```
+
+## ProgrammeWorkshop → AccreditingBody
+
+```text
+ProgrammeWorkshop N —— 1 AccreditingBody
+```
+
+## Session → Campus
+
+```text
+Session N —— 1 Campus
+```
+
+## Session → ProgrammeWorkshop
+
+```text
+Session N —— 1 ProgrammeWorkshop
+```
+
+## Session → Instructor
+
+```text
+Session N —— 1 Instructor
+```
+
+## Enrolment → Session
+
+```text
+Enrolment N —— 1 Session
+```
+
+## Instructor → Campus
+
+```text
+Instructor N —— 1 Campus
+```
 
 ---
 
-# M : N Relationships
+# M:N Relationships
 
 ## Participant ↔ Session
-Participant 0..* —— 0..* Session
+A participant can register for many sessions, and a session can have many participants.
 
-- One Participant can attend many Sessions.
-- One Session can contain many Participants.
+```text
+Participant M —— N Session
+```
 
-This is a many-to-many (M:N) relationship.
+Resolved using the Enrolment entity:
+
+```text
+Participant 1 —— N Enrolment N —— 1 Session
+```
 
 ---
 
-# M : N Relationship Resolved Using Associative Entity
+# 1:1 Relationships
 
-## Using Enrolment
-Participant 1..1 —— 0..* Enrolment 0..* —— 1..1 Session
+There is no mandatory 1:1 relationship explicitly defined in the requirements.
 
-- Enrolment acts as the associative entity.
-- The original M:N relationship between Participant and Session is resolved into two 1:M relationships.
+Possible optional example:
+
+## Division ↔ HeadOfDivision
+
+```text
+Division 1 —— 1 HeadOfDivision
+```
+
+(Only if HeadOfDivision is treated as a separate entity rather than an attribute.)
