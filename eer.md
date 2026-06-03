@@ -1,53 +1,91 @@
-# Cardinality and Participation Constraints
+# 1 : 1 Relationships
+
+There are no true **1 : 1** relationships in this model.
+
+---
+
+# 1 : M Relationships
 
 ## Division → ProgrammeWorkshop
-```text
 Division 1..1 —— 1..* ProgrammeWorkshop
-```
+
+- One Division can have many ProgrammeWorkshops.
+- Each ProgrammeWorkshop belongs to exactly one Division.
+
+---
 
 ## AccreditingBody → ProgrammeWorkshop
-```text
 AccreditingBody 1..1 —— 0..* ProgrammeWorkshop
-```
+
+- One AccreditingBody can accredit many ProgrammeWorkshops.
+- Each ProgrammeWorkshop belongs to one AccreditingBody.
+
+---
 
 ## Campus → Session
-```text
 Campus 1..1 —— 0..* Session
-```
+
+- One Campus can host many Sessions.
+- Each Session belongs to one Campus.
+
+---
 
 ## ProgrammeWorkshop → Session
-```text
 ProgrammeWorkshop 1..1 —— 1..* Session
-```
+
+- One ProgrammeWorkshop can contain many Sessions.
+- Each Session belongs to one ProgrammeWorkshop.
+
+---
 
 ## Instructor → Session
-```text
 Instructor 1..1 —— 0..* Session
-```
+
+- One Instructor can teach many Sessions.
+- Each Session is taught by one Instructor.
+
+---
 
 ## Campus → Instructor
-```text
 Campus 1..1 —— 0..* Instructor
-```
+
+- One Campus can have many Instructors.
+- Each Instructor belongs to one Campus.
+
+---
 
 ## Session → Enrolment
-```text
 Session 1..1 —— 0..* Enrolment
-```
+
+- One Session can have many Enrolments.
+- Each Enrolment belongs to one Session.
+
+---
 
 ## Participant → Enrolment
-```text
 Participant 1..1 —— 0..* Enrolment
-```
 
-# Many-to-Many Relationship
+- One Participant can have many Enrolments.
+- Each Enrolment belongs to one Participant.
+
+---
+
+# M : N Relationships
 
 ## Participant ↔ Session
-```text
 Participant 0..* —— 0..* Session
-```
 
-## Resolved Using Associative Entity
-```text
+- One Participant can attend many Sessions.
+- One Session can contain many Participants.
+
+This is a many-to-many (M:N) relationship.
+
+---
+
+# M : N Relationship Resolved Using Associative Entity
+
+## Using Enrolment
 Participant 1..1 —— 0..* Enrolment 0..* —— 1..1 Session
-```
+
+- Enrolment acts as the associative entity.
+- The original M:N relationship between Participant and Session is resolved into two 1:M relationships.
